@@ -10,7 +10,9 @@ if __name__ == "__main__":
 
     # なにも入力がない場合usage
     if (len(args) == 1):
-        print("Usage: python3 ft_inventory_system.py <item_name>:<quantity> ...")
+        print(
+            "Usage: python3 ft_inventory_system.py <item_name>:<quantity> ..."
+        )
 
     else:
         inventory: dict[str, int] = {}
@@ -34,7 +36,10 @@ if __name__ == "__main__":
 
         print(f"Got inventory: {inventory}")
         print(f"Item list: {list(inventory.keys())}")
-        print(f"Total quantity of the {len(inventory)} items: {sum(inventory.values())}")
+        print(
+            f"Total quantity of the {len(inventory)} "
+            f"items: {sum(inventory.values())}"
+        )
 
         total = sum(inventory.values())
 
@@ -57,8 +62,12 @@ if __name__ == "__main__":
                 if (inventory[name] < inventory[low]):
                     low = name
         if not first:
-            print(f"Item most abundant: {high} with quantity {inventory[high]}")
-            print(f"Item least abundant: {low} with quantity {inventory[low]}")
+            print(
+                f"Item most abundant: {high} with quantity {inventory[high]}"
+            )
+            print(
+                f"Item least abundant: {low} with quantity {inventory[low]}"
+            )
 
         # 新しいアイテムを追加
         inventory.update({"magic_item": 1})
