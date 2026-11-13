@@ -4,7 +4,8 @@ import random
 if __name__ == "__main__":
     print("=== Game Data Alchemist ===")
 
-    players: list[str] = ["Alice", "bob", "Charlie", "dylan", "Emma", "Gragory", "john", "kevin", "Liam"]
+    players: list[str] = ["Alice", "bob", "Charlie",
+                          "dylan", "Emma", "Gragory", "john", "kevin", "Liam"]
     # 要素一つずつcapitalizeしてぶちこむ
     capitalized = [name.capitalize() for name in players]
     print(f"Initial list of players: {players}")
@@ -21,5 +22,6 @@ if __name__ == "__main__":
     average = sum(scores.values()) / len(scores)
     print(f"Score average is {round(average, 2)}")
 
-    high_scores = {name: scores[name] for name in scores if scores[name] > average}
+    high_scores = {name: scores[name]
+                   for name in scores if scores[name] > average}
     print(f"High scores: {high_scores}")
